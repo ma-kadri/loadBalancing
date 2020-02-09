@@ -1,2 +1,15 @@
-docker build --build-arg var_name=${VARIABLE_NAME} (...)
-while true; do curl  localhost:9000; curl localhost:10000 ; done
+This setup is for Local Experiments where we have a application giving different output as "v1" and "v2" depending upon on the variable passed at built.
+The idea is to run this setup as 2 docker containers using different versions of images, it can be on localhost, or on VM`s running behind Cloud LoadBalancer, Proxy applications like NGINX, HAPROXY and etc.
+Then we can bombard the endpoint and see the results, with actual version being displayed! 
+This can also be useful in situation where we want to do a Blue/Green Deployment or Canary Releases.
+Plus also for checking your Proxy tool setup!
+Makefile is being used as a build Tool.
+
+
+Syntax:
+# make version=v1
+# make version=v2
+
+Assuming we are running this on LocalHost, using Nginx as Proxy.
+
+# make run 
